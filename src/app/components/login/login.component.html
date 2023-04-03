@@ -1,0 +1,31 @@
+<section class="login container">
+  <h1 class="titulo">Acessar sua conta</h1>
+  <p>Seja bem-vindo novamente!</p>
+  <form>
+    <input
+      class="input-padrao email"
+      name="email"
+      type="email"
+      placeholder="Insira o seu e-mail"
+      [(ngModel)]="credenciais.email"
+    />
+    <input
+      class="input-padrao senha"
+      name="senha"
+      type="password"
+      placeholder="Insira a sua senha"
+      [(ngModel)]="credenciais.senha"
+    />
+    <button
+      class="btn-azul"
+      [disabled]="!credenciais.email || credenciais.senha.length == 0"
+      (click)="login()"
+    >
+      Acessar
+    </button>
+  </form>
+  <p>
+    Não possui uma conta? Clique <a routerLink="/cadastro">aqui</a> para se
+    cadastrar!
+  </p>
+</section>

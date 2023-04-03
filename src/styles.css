@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
+  background: #ececec;
 }
 
 #app {
@@ -16,6 +21,105 @@ main {
 .container {
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1.titulo {
+  color: #1488cc;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+input.input-padrao {
+  width: 100%;
+  height: 40px;
+  padding-left: 40px;
+  color: #101828;
+  border: 1px solid #d0d5dd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 10px center;
+}
+
+input.valor {
+  background-image: url("assets/img/valor.svg");
+}
+
+input.conta {
+  background-image: url("assets/img/conta.svg");
+}
+
+input.titular {
+  background-image: url("assets/img/titular.svg");
+}
+
+input.email {
+  background-image: url("assets/img/email.svg");
+}
+
+input.senha {
+  background-image: url("assets/img/senha.svg");
+}
+
+input.confirmar-senha {
+  background-image: url("assets/img/confirmar_senha.svg");
+}
+
+input.telefone {
+  background-image: url("assets/img/telefone.svg");
+}
+
+input.documento {
+  background-image: url("assets/img/documento.svg");
+}
+
+input.razao {
+  background-image: url("assets/img/razao_social.svg");
+}
+
+input.fantasia {
+  background-image: url("assets/img/nome_fantasia.svg");
+}
+
+input.data {
+  background-image: url("assets/img/data.svg");
+}
+
+input.input-padrao:focus {
+  outline: none;
+}
+
+input[type="radio"] {
+  transform: scale(1.2);
+  accent-color: #1488cc;
+  margin-right: 5px;
+}
+
+button.btn-azul {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background: #1488cc;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.btn-azul:hover,
+button.btn-azul:focus {
+  opacity: 0.75;
+  outline: none;
+}
+
+button.btn-azul:disabled {
+  cursor: default;
+  opacity: 0.5;
 }
