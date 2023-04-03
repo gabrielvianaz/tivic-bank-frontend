@@ -12,9 +12,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { CadastroPfComponent } from './components/cadastro/cadastro-pf.component';
+import { CadastroPjComponent } from './components/cadastro/cadastro-pj.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoginComponent,
+    CadastroComponent,
+    CadastroPfComponent,
+    CadastroPjComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

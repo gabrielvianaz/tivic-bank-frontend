@@ -1,0 +1,14 @@
+form.cadastro {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 600px) {
+  form.cadastro {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,57 @@
+<form class="cadastro">
+  <input
+    class="input-padrao documento"
+    name="cpf"
+    type="string"
+    placeholder="Insira o seu CPF"
+    [(ngModel)]="cliente.cpf"
+  />
+  <input
+    class="input-padrao titular"
+    name="nome"
+    type="string"
+    placeholder="Insira o seu nome"
+    [(ngModel)]="cliente.nome"
+  />
+  <input
+    class="input-padrao email"
+    name="email"
+    type="email"
+    placeholder="Insira o seu e-mail"
+    [(ngModel)]="cliente.email"
+  />
+  <input
+    class="input-padrao telefone"
+    name="telefone"
+    type="string"
+    placeholder="Insira o seu telefone"
+    [(ngModel)]="cliente.telefone"
+  />
+  <input
+    class="input-padrao data"
+    name="dataNascimento"
+    type="date"
+    [(ngModel)]="cliente.dataNascimento"
+  />
+  <input
+    class="input-padrao senha"
+    name="senha"
+    type="password"
+    placeholder="Crie a sua senha"
+    [(ngModel)]="cliente.senha"
+  />
+  <input
+    class="input-padrao confirmar-senha"
+    name="confirmacaoSenha"
+    type="password"
+    placeholder="Confirme a senha digitada"
+    [(ngModel)]="confirmacaoSenha"
+  />
+  <button
+    [disabled]="!todosCamposPreenchidos() || !confirmacaoSenha"
+    (click)="cadastrar()"
+    class="btn-azul"
+  >
+    Cadastrar
+  </button>
+</form>

@@ -1,0 +1,34 @@
+<section class="cadastro container">
+  <h1 class="titulo">Criar sua conta</h1>
+  <p>Junte-se a nós e desfrute dos nossos serviços!</p>
+  <div class="tipo-cliente">
+    <div class="opcao">
+      <label for="pf">Pessoa Física</label>
+      <input
+        type="radio"
+        id="pf"
+        name="tipo"
+        [(ngModel)]="tipoCliente"
+        [value]="'pf'"
+      />
+    </div>
+    <div class="opcao">
+      <label for="pj">Pessoa Jurídica</label>
+      <input
+        type="radio"
+        id="pj"
+        name="tipo"
+        [(ngModel)]="tipoCliente"
+        [value]="'pj'"
+      />
+    </div>
+  </div>
+  <app-cadastro-pf *ngIf="tipoCliente === 'pf'; else cadastroPj " />
+  <ng-template #cadastroPj>
+    <app-cadastro-pj></app-cadastro-pj>
+  </ng-template>
+  <p>
+    Já possui uma conta? Clique <a routerLink="/login">aqui</a> para fazer
+    login!
+  </p>
+</section>

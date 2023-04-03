@@ -1,8 +1,9 @@
 import { ICredenciais } from './../../models/ICredenciais';
 import { LoginService } from './../../services/login.service';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { emailValido } from 'src/app/util/app.utils';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent {
   constructor(
     private toast: ToastrService,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   credenciais: ICredenciais = {
@@ -21,18 +23,35 @@ export class LoginComponent {
     senha: '',
   };
 
+  loading = false;
+
   login() {
-    this.loginService.login(this.credenciais).subscribe(
-      (r) => this.logadoComSucesso(`Bearer ${r.body}`),
-      () => this.falhaNoLogin()
-    );
+    if (emailValido(this.credenciais.email)) {
+      this.loading = true;
+      this.cdr.detectChanges();
+      this.loginService.login(this.credenciais).subscribe(
+        (r) => {
+          this.handleLoginComSucesso(`Bearer ${r.body}`);
+          this.loading = false;
+        },
+        () => {
+          this.toastFalhaNoLogin();
+          this.loading = false;
+        }
+      );
+    } else this.toastEmailInvalido();
   }
-  logadoComSucesso(token: string) {
+
+  handleLoginComSucesso(token: string) {
     localStorage.setItem('token', token);
     this.router.navigate(['/home']);
   }
 
-  falhaNoLogin() {
-    this.toast.error('Usuário e/ou senha inválidos!');
+  toastEmailInvalido() {
+    this.toast.error('O e-mail informado é inválido!');
+  }
+
+  toastFalhaNoLogin() {
+    this.toast.error('E-mail e/ou senha inválidos!');
   }
 }

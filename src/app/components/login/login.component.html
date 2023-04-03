@@ -18,7 +18,9 @@
     />
     <button
       class="btn-azul"
-      [disabled]="!credenciais.email || credenciais.senha.length == 0"
+      [disabled]="
+        !credenciais.email || credenciais.senha.length == 0 || loading
+      "
       (click)="login()"
     >
       Acessar

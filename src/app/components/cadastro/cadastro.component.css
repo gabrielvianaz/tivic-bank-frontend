@@ -1,0 +1,27 @@
+.cadastro a {
+  font-weight: bold;
+  color: #1488cc;
+  text-decoration: none;
+}
+
+.cadastro a:hover,
+.cadastro a:focus {
+  opacity: 0.5;
+  outline: none;
+}
+
+.tipo-cliente {
+  margin: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.opcao input[type="radio"] {
+  transform: scale(1.2);
+  accent-color: #1488cc;
+}
+
+.opcao label {
+  font-weight: bold;
+  color: #1488cc;
+}
