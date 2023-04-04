@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { IClientePJ } from 'src/app/models/IClientePJ';
-import { CadastroService } from 'src/app/services/cadastro.service';
-import { LoginService } from 'src/app/services/login.service';
+import { IClientePJ } from 'src/app/models/cadastro/IClientePJ';
+import { CadastroService } from 'src/app/services/cadastro/cadastro.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import {
   cnpjValido,
   emailValido,

@@ -1,9 +1,9 @@
-import { ICredenciais } from './../../models/ICredenciais';
-import { LoginService } from './../../services/login.service';
+import { ICredenciais } from '../../models/login/ICredenciais';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { emailValido } from 'src/app/util/app.utils';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',

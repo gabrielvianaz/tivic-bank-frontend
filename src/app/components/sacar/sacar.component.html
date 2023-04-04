@@ -1,0 +1,19 @@
+<section class="sacar container">
+  <div class="wrapper">
+    <img class="icone-sessao" src="assets/img/sacar.svg" alt="Ícone sacar" />
+    <h1 class="titulo">Sacar</h1>
+    <input
+      class="input-padrao valor"
+      type="number"
+      placeholder="Valor"
+      [(ngModel)]="saque.valor"
+    />
+    <button
+      (click)="sacar()"
+      [disabled]="saque.valor <= 0 || carregando"
+      class="btn-azul"
+    >
+      Sacar
+    </button>
+  </div>
+</section>

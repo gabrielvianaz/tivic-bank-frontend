@@ -1,8 +1,8 @@
-import { IClientePJ } from './../models/IClientePJ';
-import { API_CONFIG } from './../config/api.config';
-import { IClientePF } from './../models/IClientePF';
+import { API_CONFIG } from '../../config/api.config';
+import { IClientePF } from '../../models/cadastro/IClientePF';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IClientePJ } from 'src/app/models/cadastro/IClientePJ';
 
 @Injectable({
   providedIn: 'root',

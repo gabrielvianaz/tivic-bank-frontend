@@ -7,9 +7,9 @@ import {
   formatarData,
   todosCamposPreenchidos,
 } from 'src/app/util/app.utils';
-import { LoginService } from 'src/app/services/login.service';
-import { CadastroService } from 'src/app/services/cadastro.service';
-import { IClientePF } from 'src/app/models/IClientePF';
+import { IClientePF } from 'src/app/models/cadastro/IClientePF';
+import { CadastroService } from 'src/app/services/cadastro/cadastro.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-cadastro-pf',

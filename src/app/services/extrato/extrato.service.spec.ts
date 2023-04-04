@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DadosContaService } from './dados-conta.service';
+import { ExtratoService } from '../extrato/extrato.service';
 
-describe('DadosContaService', () => {
-  let service: DadosContaService;
+describe('ExtratoService', () => {
+  let service: ExtratoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DadosContaService);
+    service = TestBed.inject(ExtratoService);
   });
 
   it('should be created', () => {

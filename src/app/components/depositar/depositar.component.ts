@@ -1,7 +1,7 @@
-import { IDeposito } from './../../models/IDeposito';
+import { IDeposito } from '../../models/depositar/IDeposito';
 import { ToastrService } from 'ngx-toastr';
-import { DepositarService } from './../../services/depositar.service';
 import { Component } from '@angular/core';
+import { DepositarService } from 'src/app/services/depositar/depositar.service';
 
 @Component({
   selector: 'app-depositar',

@@ -20,9 +20,10 @@ import { OperacoesComponent } from './components/home/operacoes/operacoes.compon
 import { OperacaoComponent } from './components/home/operacoes/operacao.component';
 import { DadosContaComponent } from './components/home/dados-conta/dados-conta.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
-import { SpinnerComponent } from './components/common/spinner.component';
+import { SpinnerComponent } from './components/common/spinner/spinner.component';
 import { ExtratoComponent } from './components/extrato/extrato.component';
 import { DepositarComponent } from './components/depositar/depositar.component';
+import { SacarComponent } from './components/sacar/sacar.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DepositarComponent } from './components/depositar/depositar.component';
     SpinnerComponent,
     ExtratoComponent,
     DepositarComponent,
+    SacarComponent,
   ],
   imports: [
     BrowserModule,

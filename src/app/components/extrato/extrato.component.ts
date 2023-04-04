@@ -1,6 +1,6 @@
-import { IOperacao } from './../../models/IOperacao';
-import { ExtratoService } from './../../services/extrato.service';
+import { IOperacao } from '../../models/extrato/IOperacao';
 import { Component, OnInit } from '@angular/core';
+import { ExtratoService } from 'src/app/services/extrato/extrato.service';
 
 @Component({
   selector: 'app-extrato',

@@ -1,7 +1,7 @@
-import { IDadosConta } from '../../../models/IDadosConta';
+import { IDadosConta } from '../../../models/dados-conta/IDadosConta';
 import { Component } from '@angular/core';
-import { DadosContaService } from 'src/app/services/dados-conta.service';
 import { formatarParaReal } from 'src/app/util/app.utils';
+import { DadosContaService } from 'src/app/services/dados-conta/dados-conta.service';
 
 @Component({
   selector: 'app-dados-conta',
