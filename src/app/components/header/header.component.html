@@ -2,4 +2,11 @@
   <a routerLink="">
     <img src="assets/img/logo.svg" alt="Logo TIVIC Bank" />
   </a>
+  <img
+    class="logoff"
+    src="assets/img/logoff.svg"
+    alt="Logoff"
+    *ngIf="estaLogado()"
+    (click)="logoff()"
+  />
 </header>

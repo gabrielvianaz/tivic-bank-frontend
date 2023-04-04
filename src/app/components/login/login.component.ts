@@ -1,5 +1,5 @@
 import { ICredenciais } from '../../models/login/ICredenciais';
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { emailValido } from 'src/app/util/app.utils';
@@ -10,13 +10,17 @@ import { LoginService } from 'src/app/services/login/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(
     private toast: ToastrService,
     private loginService: LoginService,
     private router: Router,
     private cdr: ChangeDetectorRef
   ) {}
+
+  ngOnInit(): void {
+    localStorage.removeItem('token');
+  }
 
   credenciais: ICredenciais = {
     email: '',

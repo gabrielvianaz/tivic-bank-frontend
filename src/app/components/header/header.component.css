@@ -1,9 +1,23 @@
 header {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: 30px;
 }
 
 header img {
   height: 40px;
+}
+
+header a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header img.logoff {
+  cursor: pointer;
+}
+
+header img.logoff:hover {
+  opacity: 0.5;
 }
