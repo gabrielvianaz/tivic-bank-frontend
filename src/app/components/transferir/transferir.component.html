@@ -28,15 +28,17 @@
       [(ngModel)]="transferencia.valor"
     />
     <button
-      (click)="transferir()"
-      [disabled]="
-        !transferencia.contaDestino.tipo ||
-        transferencia.valor <= 0 ||
-        carregando
-      "
       class="btn-azul"
+      (click)="transferir()"
+      [disabled]="!transferencia.contaDestino.tipo || transferencia.valor <= 0"
+      *ngIf="!carregando; else spinner"
     >
       Transferir
     </button>
+    <ng-template #spinner>
+      <div class="spinner">
+        <app-spinner></app-spinner>
+      </div>
+    </ng-template>
   </div>
 </section>

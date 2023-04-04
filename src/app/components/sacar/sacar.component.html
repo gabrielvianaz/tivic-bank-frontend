@@ -9,11 +9,17 @@
       [(ngModel)]="saque.valor"
     />
     <button
-      (click)="sacar()"
-      [disabled]="saque.valor <= 0 || carregando"
       class="btn-azul"
+      (click)="sacar()"
+      [disabled]="saque.valor <= 0"
+      *ngIf="!carregando; else spinner"
     >
       Sacar
     </button>
+    <ng-template #spinner>
+      <div class="spinner">
+        <app-spinner></app-spinner>
+      </div>
+    </ng-template>
   </div>
 </section>
