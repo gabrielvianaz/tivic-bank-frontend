@@ -1,0 +1,23 @@
+<section class="depositar container">
+  <div class="wrapper">
+    <img
+      class="icone-sessao"
+      src="assets/img/depositar.svg"
+      alt="Ícone depositar"
+    />
+    <h1 class="titulo">Depositar</h1>
+    <input
+      class="input-padrao valor"
+      type="number"
+      placeholder="Valor"
+      [(ngModel)]="deposito.valor"
+    />
+    <button
+      (click)="depositar()"
+      [disabled]="deposito.valor <= 0 || carregando"
+      class="btn-azul"
+    >
+      Depositar
+    </button>
+  </div>
+</section>

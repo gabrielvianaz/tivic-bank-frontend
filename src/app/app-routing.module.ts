@@ -1,3 +1,4 @@
+import { DepositarComponent } from './components/depositar/depositar.component';
 import { ExtratoComponent } from './components/extrato/extrato.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'extrato',
     component: ExtratoComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'depositar',
+    component: DepositarComponent,
     canActivate: [AuthGuard],
   },
   {

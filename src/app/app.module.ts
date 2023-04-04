@@ -22,6 +22,7 @@ import { DadosContaComponent } from './components/home/dados-conta/dados-conta.c
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { SpinnerComponent } from './components/common/spinner.component';
 import { ExtratoComponent } from './components/extrato/extrato.component';
+import { DepositarComponent } from './components/depositar/depositar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ExtratoComponent } from './components/extrato/extrato.component';
     DadosContaComponent,
     SpinnerComponent,
     ExtratoComponent,
+    DepositarComponent,
   ],
   imports: [
     BrowserModule,

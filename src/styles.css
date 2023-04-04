@@ -127,3 +127,7 @@ button.btn-azul:disabled {
   cursor: default;
   opacity: 0.5;
 }
+
+img.icone-sessao {
+  width: 75px;
+}
