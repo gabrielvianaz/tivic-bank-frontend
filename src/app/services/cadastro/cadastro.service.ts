@@ -11,16 +11,33 @@ export class CadastroService {
   constructor(private http: HttpClient) {}
 
   cadastrarPF(cliente: IClientePF) {
-    return this.http.post(`${API_CONFIG.baseUrl}/clientes/pf`, cliente, {
-      observe: 'response',
-      responseType: 'json',
-    });
+    return this.http.post(
+      `${API_CONFIG.baseUrl}/clientes/pf`,
+      {
+        ...cliente,
+        cpf: cliente.cpf.replaceAll('.', '').replace('-', ''),
+      },
+      {
+        observe: 'response',
+        responseType: 'json',
+      }
+    );
   }
 
   cadastrarPJ(cliente: IClientePJ) {
-    return this.http.post(`${API_CONFIG.baseUrl}/clientes/pj`, cliente, {
-      observe: 'response',
-      responseType: 'json',
-    });
+    return this.http.post(
+      `${API_CONFIG.baseUrl}/clientes/pj`,
+      {
+        ...cliente,
+        cnpj: cliente.cnpj
+          .replaceAll('.', '')
+          .replace('-', '')
+          .replace('/', ''),
+      },
+      {
+        observe: 'response',
+        responseType: 'json',
+      }
+    );
   }
 }

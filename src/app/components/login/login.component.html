@@ -18,13 +18,17 @@
     />
     <button
       class="btn-azul"
-      [disabled]="
-        !credenciais.email || credenciais.senha.length == 0 || loading
-      "
+      [disabled]="!credenciais.email || credenciais.senha.length == 0"
       (click)="login()"
+      *ngIf="!carregando; else spinner"
     >
       Acessar
     </button>
+    <ng-template #spinner>
+      <div class="spinner">
+        <app-spinner></app-spinner>
+      </div>
+    </ng-template>
   </form>
   <p>
     Não possui uma conta? Clique <a routerLink="/cadastro">aqui</a> para se

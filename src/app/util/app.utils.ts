@@ -21,7 +21,7 @@ export function emailValido(email: string): boolean {
 }
 
 export function cpfValido(cpf: string): boolean {
-  const cpfRegex = /^\d{3}(\.?\d{3}){2}-?\d{2}$/;
+  const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$/;
   return cpfRegex.test(cpf);
 }
 

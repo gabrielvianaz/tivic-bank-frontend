@@ -35,9 +35,11 @@ export class CadastroPjComponent {
   };
 
   confirmacaoSenha = '';
+  carregando = false;
 
   cadastrar() {
     if (this.todosCamposValidos()) {
+      this.carregando = true;
       this.cadastroService
         .cadastrarPJ({
           ...this.cliente,
@@ -59,6 +61,7 @@ export class CadastroPjComponent {
             r.error.mensagem
               ? this.toastErroCadastro(r.error.mensagem)
               : this.toastErroCadastro('Erro ao tentar realizar cadastro!');
+            this.carregando = false;
           }
         );
     }

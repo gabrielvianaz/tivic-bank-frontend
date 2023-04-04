@@ -34,9 +34,11 @@ export class CadastroPfComponent {
   };
 
   confirmacaoSenha = '';
+  carregando = false;
 
   cadastrar() {
     if (this.todosCamposValidos()) {
+      this.carregando = true;
       this.cadastroService
         .cadastrarPF({
           ...this.cliente,
@@ -58,6 +60,7 @@ export class CadastroPfComponent {
             r.error.mensagem
               ? this.toastErroCadastro(r.error.mensagem)
               : this.toastErroCadastro('Erro ao tentar realizar cadastro!');
+            this.carregando = false;
           }
         );
     }

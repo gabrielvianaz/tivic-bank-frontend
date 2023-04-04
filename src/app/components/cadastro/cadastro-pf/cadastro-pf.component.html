@@ -48,10 +48,20 @@
     [(ngModel)]="confirmacaoSenha"
   />
   <button
-    [disabled]="!todosCamposPreenchidos() || !confirmacaoSenha"
-    (click)="cadastrar()"
     class="btn-azul"
+    [disabled]="
+      !todosCamposPreenchidos() ||
+      !confirmacaoSenha ||
+      (cliente.cpf.length != 11 && cliente.cpf.length != 14)
+    "
+    (click)="cadastrar()"
+    *ngIf="!carregando; else spinner"
   >
     Cadastrar
   </button>
+  <ng-template #spinner>
+    <div class="spinner">
+      <app-spinner></app-spinner>
+    </div>
+  </ng-template>
 </form>

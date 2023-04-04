@@ -27,20 +27,20 @@ export class LoginComponent implements OnInit {
     senha: '',
   };
 
-  loading = false;
+  carregando = false;
 
   login() {
     if (emailValido(this.credenciais.email)) {
-      this.loading = true;
+      this.carregando = true;
       this.cdr.detectChanges();
       this.loginService.login(this.credenciais).subscribe(
         (r) => {
           this.handleLoginComSucesso(`Bearer ${r.body}`);
-          this.loading = false;
+          this.carregando = false;
         },
         () => {
           this.toastFalhaNoLogin();
-          this.loading = false;
+          this.carregando = false;
         }
       );
     } else this.toastEmailInvalido();
