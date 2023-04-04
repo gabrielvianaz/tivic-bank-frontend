@@ -8,3 +8,11 @@
 .sacar input {
   margin-top: 20px;
 }
+
+/* Responsivo */
+
+@media screen and (max-width: 600px) {
+  .sacar .wrapper {
+    width: 90%;
+  }
+}

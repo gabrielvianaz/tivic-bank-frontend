@@ -21,3 +21,11 @@ header img.logoff {
 header img.logoff:hover {
   opacity: 0.5;
 }
+
+/* Responsivo */
+
+@media screen and (max-width: 600px) {
+  header img {
+    height: 35px;
+  }
+}

@@ -12,3 +12,11 @@
 .transferir input:disabled {
   background-color: #fff;
 }
+
+/* Responsivo */
+
+@media screen and (max-width: 600px) {
+  .transferir .wrapper {
+    width: 90%;
+  }
+}

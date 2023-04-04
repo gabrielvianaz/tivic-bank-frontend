@@ -6,6 +6,7 @@
 .dados-conta div {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .dados-conta p {

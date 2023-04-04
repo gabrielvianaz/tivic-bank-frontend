@@ -8,3 +8,11 @@
 .depositar input {
   margin-top: 20px;
 }
+
+/* Responsivo */
+
+@media screen and (max-width: 600px) {
+  .depositar .wrapper {
+    width: 90%;
+  }
+}
