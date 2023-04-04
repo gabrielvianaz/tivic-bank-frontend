@@ -1,7 +1,4 @@
 import { Router } from '@angular/router';
-import { ICredenciais } from './../../models/ICredenciais';
-import { IClientePF } from './../../models/IClientePF';
-import { CadastroService } from './../../services/cadastro.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import {
@@ -11,6 +8,8 @@ import {
   todosCamposPreenchidos,
 } from 'src/app/util/app.utils';
 import { LoginService } from 'src/app/services/login.service';
+import { CadastroService } from 'src/app/services/cadastro.service';
+import { IClientePF } from 'src/app/models/IClientePF';
 
 @Component({
   selector: 'app-cadastro-pf',
@@ -52,7 +51,7 @@ export class CadastroPfComponent {
               })
               .subscribe((r) => {
                 localStorage.setItem('token', `Bearer ${r.body}`);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/']);
               });
           },
           (r) => {

@@ -1,0 +1,37 @@
+.operacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #1488cc;
+  width: 150px;
+  height: 150px;
+}
+
+.operacao:hover {
+  cursor: pointer;
+  background: #dfdfdf;
+}
+
+.operacao a {
+  text-decoration: none;
+}
+
+.operacao .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.operacao img {
+  width: 75px;
+  height: 75px;
+}
+
+.operacao h3 {
+  color: #1488cc;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 5px 0 0 0;
+}

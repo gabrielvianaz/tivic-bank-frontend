@@ -13,8 +13,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { CadastroPfComponent } from './components/cadastro/cadastro-pf.component';
-import { CadastroPjComponent } from './components/cadastro/cadastro-pj.component';
+import { CadastroPfComponent } from './components/cadastro/cadastro-pf/cadastro-pf.component';
+import { CadastroPjComponent } from './components/cadastro/cadastro-pj/cadastro-pj.component';
+import { HomeComponent } from './components/home/home.component';
+import { OperacoesComponent } from './components/home/operacoes/operacoes.component';
+import { OperacaoComponent } from './components/home/operacoes/operacao.component';
+import { DadosContaComponent } from './components/home/dados-conta/dados-conta.component';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { SpinnerComponent } from './components/common/spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,11 @@ import { CadastroPjComponent } from './components/cadastro/cadastro-pj.component
     CadastroComponent,
     CadastroPfComponent,
     CadastroPjComponent,
+    HomeComponent,
+    OperacoesComponent,
+    OperacaoComponent,
+    DadosContaComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +48,7 @@ import { CadastroPjComponent } from './components/cadastro/cadastro-pj.component
       progressBar: true,
     }),
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

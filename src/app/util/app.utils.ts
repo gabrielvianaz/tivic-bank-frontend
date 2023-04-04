@@ -29,3 +29,10 @@ export function cnpjValido(cnpj: string): boolean {
   const cnpjRegex = /^\d{2}(\.?\d{3}){2}\/?\d{4}-?\d{2}$/;
   return cnpjRegex.test(cnpj);
 }
+
+export function formatarParaReal(valor: number): string {
+  return valor.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+}

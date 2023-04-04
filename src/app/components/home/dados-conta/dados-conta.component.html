@@ -1,0 +1,28 @@
+<div class="dados-conta">
+  <div class="wrapper" *ngIf="dadosConta.id; else spinner">
+    <div class="conta">
+      <img src="assets/img/conta_azul.svg" alt="Ícone Conta" />
+      <p>
+        Conta: <span>{{ dadosConta.id }}</span>
+      </p>
+    </div>
+    <div class="titular">
+      <img src="assets/img/titular_azul.svg" alt="Ícone Titular" />
+      <p>
+        Titular: <span>{{ dadosConta.cliente.nome }}</span>
+      </p>
+    </div>
+    <div class="saldo">
+      <img src="assets/img/saldo.svg" alt="Ícone Saldo" />
+      <p>
+        Saldo:
+        <span>{{ saldoFormatado() }}</span>
+      </p>
+    </div>
+  </div>
+  <ng-template #spinner>
+    <div class="spinner">
+      <app-spinner></app-spinner>
+    </div>
+  </ng-template>
+</div>

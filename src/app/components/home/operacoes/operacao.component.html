@@ -1,0 +1,10 @@
+<div class="operacao">
+  <a routerLink="/{{ nome }}">
+    <div class="content">
+      <img src="assets/img/{{ nome }}.svg" alt="Ícone da operação {{ nome }}" />
+      <h3 class="operacao-nome">
+        {{ nome?.charAt(0)?.toUpperCase() }}{{ nome?.substr(1) }}
+      </h3>
+    </div>
+  </a>
+</div>

@@ -1,7 +1,7 @@
-import { IClientePJ } from './../../models/IClientePJ';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { IClientePJ } from 'src/app/models/IClientePJ';
 import { CadastroService } from 'src/app/services/cadastro.service';
 import { LoginService } from 'src/app/services/login.service';
 import {
@@ -52,7 +52,7 @@ export class CadastroPjComponent {
               })
               .subscribe((r) => {
                 localStorage.setItem('token', `Bearer ${r.body}`);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/']);
               });
           },
           (r) => {

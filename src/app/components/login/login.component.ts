@@ -44,7 +44,7 @@ export class LoginComponent {
 
   handleLoginComSucesso(token: string) {
     localStorage.setItem('token', token);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   toastEmailInvalido() {

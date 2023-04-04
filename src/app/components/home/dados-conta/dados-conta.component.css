@@ -1,0 +1,31 @@
+.dados-conta .wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.dados-conta div {
+  display: flex;
+  align-items: center;
+}
+
+.dados-conta p {
+  font-weight: bold;
+  color: #1488cc;
+  margin: 0;
+}
+
+.dados-conta span {
+  font-weight: normal;
+}
+
+.dados-conta img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
