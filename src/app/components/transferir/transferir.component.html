@@ -1,0 +1,42 @@
+<section class="transferir container">
+  <div class="wrapper">
+    <img
+      class="icone-sessao"
+      src="assets/img/transferir.svg"
+      alt="Ícone transferir"
+    />
+    <h1 class="titulo">Transferir</h1>
+    <input
+      class="input-padrao conta"
+      type="number"
+      placeholder="Número da conta destino"
+      [(ngModel)]="transferencia.contaDestino.id"
+      (change)="getContaDestino()"
+    />
+    <input
+      class="input-padrao titular"
+      type="text"
+      placeholder="Nome do titular"
+      [(ngModel)]="transferencia.contaDestino.cliente.nome"
+      disabled
+    />
+    <input
+      class="input-padrao valor"
+      type="number"
+      placeholder="Valor"
+      [disabled]="!transferencia.contaDestino.id"
+      [(ngModel)]="transferencia.valor"
+    />
+    <button
+      (click)="transferir()"
+      [disabled]="
+        !transferencia.contaDestino.tipo ||
+        transferencia.valor <= 0 ||
+        carregando
+      "
+      class="btn-azul"
+    >
+      Transferir
+    </button>
+  </div>
+</section>

@@ -24,6 +24,7 @@ import { SpinnerComponent } from './components/common/spinner/spinner.component'
 import { ExtratoComponent } from './components/extrato/extrato.component';
 import { DepositarComponent } from './components/depositar/depositar.component';
 import { SacarComponent } from './components/sacar/sacar.component';
+import { TransferirComponent } from './components/transferir/transferir.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SacarComponent } from './components/sacar/sacar.component';
     ExtratoComponent,
     DepositarComponent,
     SacarComponent,
+    TransferirComponent,
   ],
   imports: [
     BrowserModule,

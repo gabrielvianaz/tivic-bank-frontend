@@ -1,0 +1,14 @@
+.transferir .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.transferir input:first-of-type {
+  margin-top: 20px;
+}
+
+.transferir input:disabled {
+  background-color: #fff;
+}
