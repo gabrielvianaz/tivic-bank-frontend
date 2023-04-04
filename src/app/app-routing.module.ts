@@ -1,3 +1,4 @@
+import { ExtratoComponent } from './components/extrato/extrato.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'cadastro',
     component: CadastroComponent,
+  },
+  {
+    path: 'extrato',
+    component: ExtratoComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

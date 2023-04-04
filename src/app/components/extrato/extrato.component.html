@@ -1,0 +1,56 @@
+<section class="extrato container">
+  <img src="assets/img/extrato.svg" alt="Ícone extrato" />
+  <h1 class="titulo">Extrato</h1>
+  <div class="spinner" *ngIf="carregando && paginaAtual === 0; else extratoTable" >
+    <app-spinner />
+  </div>
+  <ng-template #extratoTable>
+    <div class="table-wrapper">
+      <table *ngIf="extrato.length; else semOperacoes">
+        <thead class="mat-elevation-z1">
+          <tr>
+            <th>Data</th>
+            <th>Tipo Operação</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mat-elevation-z2" *ngFor="let operacao of extrato">
+            <td>{{ formatarData(operacao.momento) }}</td>
+            <td>
+              {{
+                operacao.contaOrigem && operacao.contaDestino
+                  ? formatarTransferencia(operacao)
+                  : operacao.contaOrigem
+                  ? "Saque"
+                  : "Depósito"
+              }}
+            </td>
+            <td>
+              {{
+                operacao.valor.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL"
+                })
+              }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p
+        class="ver-mais"
+        (click)="getOperacoes()"
+        *ngIf="paginaAtual < paginas && !carregando"
+      >
+        Ver mais
+      </p>
+      <div class="spinner" *ngIf="carregando && paginaAtual > 0">
+        <app-spinner></app-spinner>
+      </div>
+    </div>
+    <ng-template #semOperacoes>
+      <p>Você ainda não realizou nenhuma operação!</p>
+    </ng-template>
+  </ng-template>
+  
+</section>

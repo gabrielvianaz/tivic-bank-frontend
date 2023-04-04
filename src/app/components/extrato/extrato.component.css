@@ -1,0 +1,55 @@
+.extrato img {
+  width: 75px;
+}
+
+.table-wrapper {
+  width: 75%;
+}
+
+.extrato table {
+  background: #eeeeee;
+  width: 100%;
+  margin: 20px 0 30px 0;
+}
+
+.extrato table thead {
+  background: #1488cc;
+}
+
+.extrato table th {
+  color: #fff;
+  font-weight: bold;
+  text-align: start;
+}
+
+.extrato table tr {
+  min-height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  align-items: center;
+}
+
+.extrato table td,
+.extrato table th {
+  padding: 0 10px;
+  width: 100%;
+}
+
+p.ver-mais {
+  cursor: pointer;
+  text-align: center;
+  color: #1488cc;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+
+p.ver-mais:hover {
+  opacity: 0.5;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}

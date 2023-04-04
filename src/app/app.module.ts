@@ -21,6 +21,7 @@ import { OperacaoComponent } from './components/home/operacoes/operacao.componen
 import { DadosContaComponent } from './components/home/dados-conta/dados-conta.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { SpinnerComponent } from './components/common/spinner.component';
+import { ExtratoComponent } from './components/extrato/extrato.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SpinnerComponent } from './components/common/spinner.component';
     OperacaoComponent,
     DadosContaComponent,
     SpinnerComponent,
+    ExtratoComponent,
   ],
   imports: [
     BrowserModule,
