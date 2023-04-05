@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -6,11 +8,11 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private toast: ToastrService, private router: Router) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -22,7 +24,17 @@ export class AuthInterceptor implements HttpInterceptor {
       const cloneReq = request.clone({
         headers: request.headers.set('Authorization', token),
       });
-      return next.handle(cloneReq);
+      return next.handle(cloneReq).pipe(
+        catchError((error) => {
+          console.log(error);
+          if (error.status === 403) {
+            this.toast.error('Token inválido, efetue login novamente!');
+            localStorage.removeItem('token');
+            this.router.navigate(['/login']);
+          }
+          return throwError(() => error);
+        })
+      );
     } else {
       return next.handle(request);
     }
