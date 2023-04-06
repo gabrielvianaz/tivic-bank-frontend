@@ -26,7 +26,6 @@ export class AuthInterceptor implements HttpInterceptor {
       });
       return next.handle(cloneReq).pipe(
         catchError((error) => {
-          console.log(error);
           if (error.status === 403) {
             this.toast.error('Token inválido, efetue login novamente!');
             localStorage.removeItem('token');
